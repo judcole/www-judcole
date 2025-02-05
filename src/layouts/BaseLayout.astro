@@ -1,9 +1,13 @@
 ---
+// 02/04/25     Jud Cole Portfolio Base Layout
+
+// spell-checker: ignore lofi
+
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 
@@ -18,10 +22,14 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" data-theme="lofi">
+<!-- 
+    See Daisy themes at https://daisyui.com/docs/themes 
+    e.g. "lofi", "dark", "business"
+-->
+<html lang="en" data-theme="dark">
     <head>
         <BaseHead title={title} description={description} image={image} , ogType={ogType} />
-        {TRANSITION_API && <ViewTransitions />}
+        {TRANSITION_API && <ClientRouter />}
     </head>
     <body>
         <div class="drawer bg-base-100 lg:drawer-open">
