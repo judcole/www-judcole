@@ -1,6 +1,8 @@
 # Astrofy | Personal Portfolio Website Template
 
-![Astrofy | Personal Porfolio Website Template](public/social_img.webp)
+[//]: # ( spell-checker: ignore Astrofy )
+
+![Astrofy | Personal Portfolio Website Template](public/social_img.webp)
 
 Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with a Blog, CV, Project Section, Store, and RSS Feed.
 
@@ -100,9 +102,8 @@ The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack. You c
 
 To add a new page in the sidebar go to the `SideBarMenu` component.
 
-```
+```html
 <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-
 ```
 
 **Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` component of your new page and add that id to the link in the `SideBarMenu`
@@ -113,68 +114,68 @@ The timeline components are used to confirm the CV.
 
 ```html
 <div class="time-line-container">
-  <TimeLineElement title="Element Title" subtitle="Subtitle">
-    Content that can contain
-    <div>divs</div>
-    and <span>anything else you want</span>.
-  </TimeLineElement>
-  ...
+    <TimeLineElement title="Element Title" subtitle="Subtitle">
+        Content that can contain
+        <div>divs</div>
+        and <span>anything else you want</span>.
+    </TimeLineElement>
+    ...
 </div>
 ```
 
 #### Card & HorizontalCard
 
-The cards are primarly used for the Project and the Blog components. They include a picture, a title, and a description. 
+The cards are primarily used for the Project and the Blog components. They include a picture, a title, and a description.
 
 ```html
-<HorizontalCard title="Card Title" img="imge_url" desc="Description" url="Link
+<HorizontalCard title="Card Title" img="image_url" desc="Description" url="Link
 URL" target="Optional link target (_blank default)" badge="Optional badge"
 tags={['Array','of','tags']} />
 ```
 
 #### HorizontalCard Shop Item
 
-
 This component is already included in the Store layout of the template. In case you want to use it in another place these are the props.
 
 ```html
 <HorizontalShopItem
-  title="Item Title"
-  img="imge_url"
-  desc="Item description"
-  pricing="current_price"
-  oldPricing="old_price"
-  checkoutUrl="external store checkout url"
-  badge="Optional badge"
-  url="item details url"
-  custom_link="Custom link url"
-  custom_link_label="Cutom link btn label"
-  target="Optional link target (_self default)"
+    title="Item Title"
+    img="image_url"
+    desc="Item description"
+    pricing="current_price"
+    oldPricing="old_price"
+    checkoutUrl="external store checkout url"
+    badge="Optional badge"
+    url="item details url"
+    custom_link="Custom link url"
+    custom_link_label="Custom link btn label"
+    target="Optional link target (_self default)"
 />
 ```
 
 #### Adding a Custom Component
 
-To add a custom component, you can create a .astro file in the components folder under the source folder. 
+To add a custom component, you can create a .astro file in the components folder under the source folder.
 
-Components must follow this template. The ```---``` represents the code fence and uses Javascript and can be used for imports. 
+Components must follow this template. The `---` represents the code fence and uses Javascript and can be used for imports.
 
-The HTML component is the actual style of your new component. 
+The HTML component is the actual style of your new component.
 
 ```html
 ---
 // Component Script (JavaScript)
 ---
+
 <!-- Component Template (HTML + JS Expressions) -->
 ```
 
-For more details, see the [astro components](https://docs.astro.build/en/core-concepts/astro-components/) documentation here. 
+For more details, see the [astro components](https://docs.astro.build/en/core-concepts/astro-components/) documentation here.
 
 ### Layouts
 
 Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
 
-The BaseLayout defines a general template for each new webpage you want to add. It imports constants SITE_TITLE and SITE_DESCRIPTION which can be modified in the ```../config``` folder. Data placed there can be imported anywhere using import. 
+The BaseLayout defines a general template for each new webpage you want to add. It imports constants SITE_TITLE and SITE_DESCRIPTION which can be modified in the `../config` folder. Data placed there can be imported anywhere using import.
 
 ### Content
 
@@ -192,7 +193,7 @@ Add your `md` blog post in the `/content/blog/` folder.
 
 Add code with this format in the top of each post file.
 
-```
+```md
 ---
 title: "Post Title"
 description: "Description"
@@ -203,23 +204,23 @@ heroImage: "Post Hero Image URL"
 
 ### Pages
 
-#### Blog
+#### Blog Pages
 
 Blog uses Astro's content collection to query post's `md`.
 
-##### [page].astro
+##### Blog [page].astro
 
 The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
 
 ##### [slug].astro
 
-The `[slug].astro` is the base route for every blog post, you can customize the page layout or behaviour, by default uses `content/blog` for content collection and `PostLayout` as layout.
+The `[slug].astro` is the base route for every blog post, you can customize the page layout or behavior, by default uses `content/blog` for content collection and `PostLayout` as layout.
 
 #### Shop
 
 Add your `md` item in the `/pages/shop/` folder.
 
-##### [page].astro
+##### Shop [page].astro
 
 The `[page].astro` is the route to work with the paginated item list. You can change there the number of items listed for each page and the pagination button labels. The shop will render all `.md` files you include inside this folder.
 
@@ -261,7 +262,7 @@ The Sitemap is generated automatically when you build your website in the root o
 
 ## Deploy
 
-You can deploy your site on your favourite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
+You can deploy your site on your favorite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
 
 The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy your website.
 
@@ -282,8 +283,10 @@ Astrofy is licensed under the MIT license — see the [LICENSE](https://github.c
 
 ## Contributors
 
+```html
 <a href="https://github.com/manuelernestog/astrofy/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=manuelernestog/astrofy" />
+  <img src="https://contrib.rocks/image?repo=manuelernestog/astrofy" alt="Astrofy rocks"/>
 </a>
+```
 
 Made with [contrib.rocks](https://contrib.rocks).

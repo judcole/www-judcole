@@ -4,6 +4,14 @@
 module.exports = {
     arrowParens: "always",
     jsxSingleQuote: false,
+    overrides: [
+        {
+            files: "*.astro",
+            options: {
+                parser: "astro",
+            },
+        },
+    ],
     plugins: ["prettier-plugin-astro", "prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
     printWidth: 110,
     semi: true,
