@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-# 01/19/25 Jud Cole Astro portfolio Web site make configuration
+# 02/04/25 Jud Cole Astro portfolio Web site make configuration
 
 HOST_REMOTE := fd-debian-scw
 SITE_LOCAL := build
@@ -28,12 +28,7 @@ build: packages
 # clean: @ Clean up all generated files
 clean:
 	# ${PACKAGER} cache clean
-	rm -rf ${SITE_LOCAL}/*
-	rm -rf node_modules
-	rm -rf pnpm-lock.yaml
-	rm -rf .yarn
-	rm -f *.lock
-	rm -f *.log
+	${PACKAGER} clean
 
 # deploy: @ Build and deploy the Web site to the live site
 deploy: build
