@@ -1,10 +1,34 @@
 # Astrofy | Personal Portfolio Website Template
 
-[//]: # ( spell-checker: ignore Astrofy )
+[//]: # ( spell-checker: ignore Astrofy puppeteerrc )
 
 ![Astrofy | Personal Portfolio Website Template](public/social_img.webp)
 
 Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with a Blog, CV, Project Section, Store, and RSS Feed.
+
+## JC Commands
+
+```sh
+# Install Puppeteer
+pnpm add puppeteer
+pnpm dlx puppeteer browsers install chrome[@version]
+# Upgrade Astro
+pnpm dlx @astrojs/upgrade
+# Configure Puppeteer in .puppeteerrc.cjs
+/**
+ * @type {import("puppeteer").Configuration}
+ */
+module.exports = {
+  // Download Chrome (default `skipDownload: false`).
+  chrome: {
+    skipDownload: false,
+  },
+  // Download Firefox (default `skipDownload: true`).
+  firefox: {
+    skipDownload: true,
+  },
+};
+```
 
 ## Demo
 
