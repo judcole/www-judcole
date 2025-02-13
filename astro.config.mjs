@@ -7,5 +7,5 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
     integrations: [mdx(), sitemap(), tailwind()],
     outDir: "./build",
-    site: "https://jud.fulldev.com",
+    site: "https://www.judcole.com",
 });
