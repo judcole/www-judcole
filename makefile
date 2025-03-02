@@ -1,11 +1,11 @@
 #!/usr/bin/make -f
 
-# 02/12/25 Jud Cole Astro portfolio Web site make configuration
+# 02/14/25 Jud Cole Astro portfolio Web site make configuration
 
-HOST_REMOTE := fd-debian-scw
-SITE_LOCAL := build
-SITE_NAME := Jud Cole portfolio
-SITE_REMOTE := jc-astro
+LOCAL_FOLDER := build
+REMOTE_FOLDER := jc-portfolio
+REMOTE_HOST := fd-debian-scw
+REMOTE_PATH := /data/nginx/www
 
 CURRENT_DATE := $(shell date +%F)
 CURRENT_DATE_TIME := $(shell date +%FT%T%Z)
@@ -37,7 +37,7 @@ clean:
 
 # deploy: @ Build and deploy the Web site to the live site
 deploy: build
-	rsync -r -v ${SITE_LOCAL}/ ${HOST_REMOTE}:/var/www/${SITE_REMOTE}
+	rsync -r -v ${LOCAL_FOLDER}/ ${REMOTE_HOST}:${REMOTE_PATH}/${REMOTE_FOLDER}
 
 # dev: @ Serve the Web site on localhost and watch for changes
 dev: packages
