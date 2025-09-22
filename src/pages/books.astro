@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+---
+
+<BaseLayout title="Books" sideBarActiveItemID="books">
+    <div>
+        <div class="mb-5 w-full text-3xl font-bold">Recently Read Books</div>
+    </div>
+
+    <HorizontalCard
+        title="The Architects Paradox"
+        img="/book.svg"
+        imgWidth="50"
+        desc="An introduction to philosophy for software engineers and architects that will help them understand their design process. This book helps to answer the question “Why are we like this?"
+        url="https://leanpub.com/architectsparadox"
+        badge="Reading"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+        title="Residuality Theory"
+        img="/book.svg"
+        imgWidth="50"
+        desc="Residues: Time, Change, and Uncertainty in Software Architecture."
+        url="https://leanpub.com/residuality"
+        badge="New"
+    />
+
+    <div>
+        <div class="mt-5 mb-5 w-full text-3xl font-bold">Recommended Books</div>
+    </div>
+
+    <div class="divider my-0"></div>
+    <HorizontalCard
+        title="Modern Software Engineering: Doing What Works to Build Better Software Faster"
+        img="/book.svg"
+        imgWidth="50"
+        desc="In Modern Software Engineering, continuous delivery pioneer David Farley helps software professionals think about their work more effectively, manage it more successfully, and genuinely improve the quality of their applications, their lives, and the lives of their colleagues."
+        url="https://www.amazon.com/gp/product/B09GG6XKS4"
+    />
+    <HorizontalCard
+        title="The Hyperion Cantos 4-Book Bundle"
+        img="/book.svg"
+        imgWidth="50"
+        desc="Hailed as “one of the finest achievements of modern science fiction” by The New York Times Book Review, The Hyperion Cantos is a triumphant odyssey into the heart of space and time."
+        url="https://www.amazon.com/gp/product/B00JTZF124"
+    />
+
+    <div>
+        <div class="mt-5 mb-5 w-full text-3xl font-bold">Reference Books</div>
+    </div>
+
+    <HorizontalCard
+        title="Ultimate Rust for Systems Programming: Architecting Secure and Reliable Software Systems with Rust and WebAssembly."
+        img="/book.svg"
+        imgWidth="50"
+        desc="This book is your guide to mastering Rust programming; equipping you with essential skills and insights for efficient system programming."
+        url="https://www.amazon.com/gp/product/B0CYLWK6WR"
+    />
+</BaseLayout>

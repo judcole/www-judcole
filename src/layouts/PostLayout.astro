@@ -15,6 +15,7 @@ import { Image } from "astro:assets";
 <BaseLayout title={title} description={description} image={heroImage} , ogType="article">
     <main class="md:flex md:justify-center">
         <article class="prose prose-lg prose-img:mx-auto max-w-[750px]">
+            <div class="max-w-[150px]">
             {
                 heroImage && (
                     <Image
@@ -27,6 +28,7 @@ import { Image } from "astro:assets";
                     />
                 )
             }
+            </div>
             <h1 class="title my-2 text-4xl font-bold">{title}</h1>
             {pubDate && <time>{displayDate}</time>}
             <br />
