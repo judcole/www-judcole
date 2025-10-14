@@ -3,6 +3,14 @@ const { sideBarActiveItemID } = Astro.props;
 const activeClass = "bg-base-200"; // For primary color replace with `active` class
 ---
 
+<script type="text/javascript">
+    // <!-- Script to hide address
+    function get_em(em) {
+        return em + "&#64;jud" + "cole.com";
+    }
+    //-->
+</script>
+
 <ul class="menu menu-md w-full shrink grow overflow-y-auto">
     <li><a class="py-3 text-xl" id="home" href="/">Home</a></li>
     <li><a class="py-3 text-xl" id="resume" href="/resume/">Resume</a></li>
@@ -17,14 +25,14 @@ const activeClass = "bg-base-200"; // For primary color replace with `active` cl
     </li> -->
     <!-- <li><a class="py-3 text-base" id="store" href="/store">Store</a></li> -->
     <li><a class="py-3 text-xl" id="blog" href="/blog/">Blog</a></li>
-    <li>
-        <a
-            class="py-3 text-xl"
-            href="mailto:resume@judcole.com"
-            target="_blank"
-            referrerpolicy="no-referrer-when-downgrade">Email</a
-        >
-    </li>
+
+    <!-- Script to hide address -->
+    <script is:inline type="text/javascript">
+        var em = get_em("resume");
+        document.writeln('<li><a class="py-3 text-xl" href="' + 
+            "mail" + "to:" + em + '">' + "Email me for a resume" + 
+            "<\/a><\/li>");
+    </script>
 </ul>
 
 <script
