@@ -1,4 +1,8 @@
 ---
+// 10/14/25     Jud Cole Portfolio Books page
+
+// spell-checker: ignore architecting componentized residuality
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 ---
@@ -23,7 +27,6 @@ import HorizontalCard from "../components/HorizontalCard.astro";
         imgWidth="50"
         desc="Residues: Time, Change, and Uncertainty in Software Architecture."
         url="https://leanpub.com/residuality"
-        badge="New"
     />
 
     <div>
@@ -31,6 +34,14 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     </div>
 
     <div class="divider my-0"></div>
+    <HorizontalCard
+        title="Infrastructure as Code, Third Edition"
+        img="/book.svg"
+        imgWidth="50"
+        desc="We need to start moving beyond hand-crafted infrastructure code, which has left many of us with a sprawl of snowflake environments as code. This 3rd edition shares emerging patterns and practices for a more componentized, composable approach to infrastructure as code."
+        url="https://infrastructure-as-code.com/book"
+        badge="New"
+    />
     <HorizontalCard
         title="Modern Software Engineering: Doing What Works to Build Better Software Faster"
         img="/book.svg"
@@ -50,6 +61,20 @@ import HorizontalCard from "../components/HorizontalCard.astro";
         <div class="mt-5 mb-5 w-full text-3xl font-bold">Reference Books</div>
     </div>
 
+    <HorizontalCard
+        title="Flutter Cookbook, Second Edition"
+        img="/book.svg"
+        imgWidth="50"
+        desc="100+ step-by-step recipes for building cross-platform, professional-grade apps."
+        url="https://www.packtpub.com/en-us/product/flutter-cookbook-second-edition-9781803245430"
+    />
+    <HorizontalCard
+        title="Terraform Cookbook, Second Edition"
+        img="/book.svg"
+        imgWidth="50"
+        desc="Master Infrastructure as Code efficiency with real-world Azure automation using Terraform."
+        url="https://www.packtpub.com/en-us/product/terraform-cookbook-9781804616420"
+    />
     <HorizontalCard
         title="Ultimate Rust for Systems Programming: Architecting Secure and Reliable Software Systems with Rust and WebAssembly."
         img="/book.svg"

@@ -16,18 +16,18 @@ import { Image } from "astro:assets";
     <main class="md:flex md:justify-center">
         <article class="prose prose-lg prose-img:mx-auto max-w-[750px]">
             <div class="max-w-[150px]">
-            {
-                heroImage && (
-                    <Image
-                        width={750}
-                        height={422}
-                        format="webp"
-                        src={heroImage}
-                        alt={title}
-                        class="mb-6 w-full"
-                    />
-                )
-            }
+                {
+                    heroImage && (
+                        <Image
+                            width={750}
+                            height={422}
+                            format="webp"
+                            src={heroImage}
+                            alt={title}
+                            class="mb-6 w-full"
+                        />
+                    )
+                }
             </div>
             <h1 class="title my-2 text-4xl font-bold">{title}</h1>
             {pubDate && <time>{displayDate}</time>}
