@@ -22,7 +22,7 @@
         "astro": "^5.14.5",
         "daisyui": "5.3.1",
         "dayjs": "^1.11.18",
-        "puppeteer": "^24.24.1",
+        "puppeteer": "^24.25.0",
         "sharp": "^0.34.4",
         "tailwindcss": "^4.1.14",
         "typescript": "^5.9.3"
@@ -40,7 +40,7 @@
         "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-tailwindcss": "^0.7.0"
     },
-    "packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d",
+    "packageManager": "pnpm@10.18.3+sha512.bbd16e6d7286fd7e01f6b3c0b3c932cda2965c06a908328f74663f10a9aea51f1129eea615134bf992831b009eabe167ecb7008b597f40ff9bc75946aadfb08d",
     "pnpm": {
         "onlyBuiltDependencies": [
             "@tailwindcss/oxide",
