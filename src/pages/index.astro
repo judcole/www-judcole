@@ -9,6 +9,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
+import dayjs from "dayjs";
 
 const posts = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -39,10 +40,10 @@ const last_posts = posts.slice(0, 3);
                         to ~$300m in annual revenue in 2 years.
                     </li>
                     <li>
-                        <span class="font-bold">Co-founded and led</span> several software startups, including
-                        a fully self-funding and profitable builder of software development tools for almost 10
-                        years that we grew to 25+ people who supported over 50,000 paying customers throughout
-                        the world from three separate locations in the USA and the UK.
+                        <span class="font-bold">Co-founded and led</span> several software startups, including a
+                        fully self-funding and profitable builder of software development tools for almost 10 years
+                        that we grew to 25+ people who supported over 50,000 paying customers throughout the world
+                        from three separate locations in the USA and the UK.
                     </li>
                     <li>
                         <span class="font-bold">Built and led</span> the teams that designed and delivered on schedule
@@ -57,8 +58,7 @@ const last_posts = posts.slice(0, 3);
                     </li>
                     <li>
                         <span class="font-bold">Led the technical efforts</span> for the winning proposal for a
-                        $64 million technology contract with the US National Center for Educational Statistics
-                        (NCES).
+                        $64 million technology contract with the US National Center for Educational Statistics (NCES).
                     </li>
                 </ul>
             </text>
@@ -70,9 +70,9 @@ const last_posts = posts.slice(0, 3);
     <div class="py-2">
         <text class="text-lg">
             <p class="mb-2">
-                An experienced technology leader, innovator, strategist, and mentor who loves to solve complex
-                technical challenges and lead organizations and teams in creating efficient, high quality, and
-                easy to use and maintain technology-based solutions.
+                A dynamic and experienced technology leader, innovator, strategist, and mentor who loves to
+                solve complex technical challenges and lead organizations and teams in creating efficient,
+                high quality, and easy to use and maintain technology-based solutions.
             </p>
             <p class="mb-2">
                 Repeatedly recognized as a leader, team builder, and motivator who combines the technical
@@ -94,13 +94,13 @@ const last_posts = posts.slice(0, 3);
                 </li>
                 <li>
                     <span class="font-bold"> Exceptional results exceeding expectations: </span>
-                    Committed goal- and result-oriented pioneer of cutting-edge techniques and technologies to
-                    enhance operational efficiency, reliability and profitability while reducing associated risk.
+                    Committed goal- and result-oriented pioneer of cutting-edge techniques and technologies to enhance
+                    operational efficiency, reliability and profitability while reducing associated risk.
                 </li>
                 <li>
                     <span class="font-bold"> Clear communication:</span> Skilled speaker and writer with international
-                    and multi-cultural experience in business development, proposal writing, product briefing,
-                    public speaking, training, and authoring technical manuals.
+                    and multi-cultural experience in business development, proposal writing, product briefing, public
+                    speaking, training, and authoring technical manuals.
                 </li>
                 <li>
                     <span class="font-bold"> Far reaching technical expertise:</span>
@@ -124,7 +124,7 @@ const last_posts = posts.slice(0, 3);
         last_posts.map((post) => (
             <>
                 <HorizontalCard
-                    title={post.data.title}
+                    title={post.data.title + " (" + dayjs(post.data.pubDate).format("ll") + ")"}
                     img={post.data.heroImage}
                     desc={post.data.description}
                     url={"/blog/" + createSlug(post.data.title, post.slug)}
