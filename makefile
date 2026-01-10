@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-# 02/14/25 Jud Cole Astro portfolio Web site make configuration
+# 2026-01-10	Jud Cole Astro portfolio Web site make configuration
 
 LOCAL_FOLDER := build
 REMOTE_FOLDER := jc-portfolio
@@ -47,21 +47,23 @@ dev: packages
 format: packages
 	${PACKAGER} format
 
-# install: @ Install package manager and other dependencies
+# install: @ Install package manager and all package dependencies
 install:
 ifneq ($(NVM_INSTALLED),0)
 	@echo "NVM not installed"
 	# Install latest npm
 	# ${NVM} install --lts --latest-npm
 endif
+	@if ! [ $$(command -v corepack) ]; then npm install --global corepack@latest; corepack --version; fi
 ifeq ($(PACKAGER), yarn)
-	@if ! [ $(command -v $(PACKAGER)) ]; then corepack $(PACKAGER) --version; fi
+	@if ! [ $$(command -v ${PACKAGER}) ]; then corepack enable ${PACKAGER}; corepack use pnpm@latest-10; corepack ${PACKAGER} --version; fi
+	@if [ -z "$$(${PACKAGER} list astro)" ]; then ${PACKAGER} install; fi
 else ifeq ($(PACKAGER), pnpm)
-	@if ! [ $(command -v $(PACKAGER)) ]; then corepack $(PACKAGER) --version; fi
-	@if ! [ $(command -v astro) ]; then ${PACKAGER} install; fi
+	@if ! [ $$(command -v ${PACKAGER}) ]; then corepack enable ${PACKAGER}; corepack use pnpm@latest-10; corepack ${PACKAGER} --version; fi
+	@if [ -z "$$(${PACKAGER} list astro)" ]; then ${PACKAGER} install; fi
 endif
 
-# Dependent packages
+# Sub-task to install dependent packages
 packages: install
 ifeq ($(PACKAGER), yarn)
 	@if ! [ -f "yarn.lock" ]; then yarn install; fi
