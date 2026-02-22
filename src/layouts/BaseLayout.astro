@@ -1,5 +1,5 @@
 ---
-// 02/13/25     Jud Cole Portfolio Base Layout
+// 2026-02-21 Jud Cole Portfolio Base Layout
 
 // spell-checker: ignore lofi
 
@@ -8,6 +8,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
 import { ClientRouter } from "astro:transitions";
+import { ThemeScript } from "astro-theme-toggle/components";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 
@@ -22,14 +23,15 @@ const {
 ---
 
 <!doctype html>
-<!-- 
-    See Daisy themes at https://daisyui.com/docs/themes 
+<!--
+    See Daisy themes at https://daisyui.com/docs/themes
     e.g. "lofi", "dark", "business"
 -->
 <html lang="en" data-theme="light">
     <head>
         <BaseHead title={title} description={description} image={image} , ogType={ogType} />
         {TRANSITION_API && <ClientRouter />}
+        <ThemeScript />
         <!-- <script>
             // Create CheckCSS instance
             import { CheckCSS } from "checkcss";
@@ -51,6 +53,7 @@ const {
 
     <body>
         <div class="drawer bg-base-100 lg:drawer-open">
+            <label for="my-drawer"></label>
             <input id="my-drawer" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content bg-base-100">
                 <Header title={SITE_TITLE} />
