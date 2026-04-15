@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-# 2026-01-16	Jud Cole Astro portfolio Web site make configuration
+# 2026-04-14	Jud Cole Astro portfolio Web site make configuration
 
 LOCAL_FOLDER := build
 REMOTE_FOLDER := jc-portfolio
@@ -29,13 +29,13 @@ build: packages
 
 # check: @ Check all source files for errors
 check: packages
-	${PACKAGER} check
-	${PACKAGER} lint
+	${PACKAGER} run check
+	${PACKAGER} run lint
 
 # clean: @ Clean up all generated files
 clean:
 	# ${PACKAGER} cache clean
-	${PACKAGER} clean
+	${PACKAGER} run clean
 
 # deploy: @ Build and deploy the Web site to the live site
 deploy: build
@@ -43,11 +43,15 @@ deploy: build
 
 # dev: @ Serve the Web site on localhost and watch for changes
 dev: packages
-	${PACKAGER} dev
+	${PACKAGER} run dev
 
-# format: @ Format all source files
-format: packages
-	${PACKAGER} format
+# fmt-check: @ Check the format of all source files
+fmt-check: packages
+	${PACKAGER} run fmt:check
+
+# fmt-fix: @ Format all source files
+fmt-fix: packages
+	${PACKAGER} run fmt:fix
 
 # install: @ Install package manager and all package dependencies
 install:
@@ -65,6 +69,12 @@ else ifeq ($(PACKAGER), pnpm)
 	@if [ -z "$$(${PACKAGER} list astro)" ]; then ${PACKAGER} install; fi
 endif
 
+# lint: @ Check the backend and frontend source code for issues
+lint:
+	${PACKAGER} run lint
+	cargo check
+	cargo clippy
+
 # Sub-task to install dependent packages
 packages: install
 ifeq ($(PACKAGER), yarn)
@@ -75,7 +85,7 @@ endif
 
 # preview: @ Build and preview the Web site on localhost
 preview: build
-	${PACKAGER} preview
+	${PACKAGER} run preview
 
 # upgrade: @ Upgrade all packages to their latest versions
 upgrade: packages
