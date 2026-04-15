@@ -1,6 +1,6 @@
 ---
 const { sideBarActiveItemID } = Astro.props;
-const activeClass = "bg-base-200"; // For primary color replace with `active` class
+const activeClass = "bg-base-200"; // For primary color replace value with `active` class
 ---
 
 <ul class="menu menu-md w-full shrink grow overflow-y-auto">
@@ -11,11 +11,11 @@ const activeClass = "bg-base-200"; // For primary color replace with `active` cl
     <li><a class="py-3 text-xl" id="projects" href="/projects/">Projects</a></li>
     <!-- <li><a class="py-3 text-base" id="services" href="/services">Services</a></li> -->
     <!-- <li><a class="py-3 text-base" id="store" href="/store">Store</a></li> -->
-    <li><a id="blog" class="py-3 text-xl" id="blog" href="/blog/">Blog</a></li>
+    <li><a class="py-3 text-xl" id="blog" href="/blog/">Blog</a></li>
     <li>
         <a id="email-resume" class="py-3 text-xl" href="" target="_blank"
             >Email for a resume
-            <img src="/pdf.svg" onload="fff()" width="32" height="32" /></a
+            <img src="/pdf.svg" onload="fff()" width="32" height="32"  alt="Email PDF"/></a
         >
     </li>
 </ul>
@@ -24,8 +24,7 @@ const activeClass = "bg-base-200"; // For primary color replace with `active` cl
     function fff() {
         const hRef = document.getElementById("email-resume");
         console.log(hRef.innerText);
-        const Em = "mail" + "to:res" + "ume" + String.fromCharCode(64) + "jud" + "cole.com";
-        hRef.href = Em;
+        hRef.href = "mail" + "to:res" + "ume" + String.fromCharCode(64) + "jud" + "cole.com";
     }
 </script>
 
@@ -37,5 +36,5 @@ const activeClass = "bg-base-200"; // For primary color replace with `active` cl
     }}
 >
     const activeItemElem = document.getElementById(sideBarActiveItemID);
-    activeItemElem && activeItemElem.classList.add(activeClass);
+    if (activeItemElem) { activeItemElem.classList.add(activeClass) }
 </script>
