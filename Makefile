@@ -22,6 +22,7 @@ help:
 	@echo -e '---------------------------------------------\n'
 	@grep -Eoh '[0-9a-zA-Z_\.\-]+:.*?@ .*' $(MAKEFILE_LIST) | \
 	awk 'BEGIN {FS = ":.*?@ "}; {printf "\033[36m%-12s\033[0m %s\n", $$1, $$2}' | sort
+	@echo -e ''
 
 # build: @ Build the Web site
 build: packages
@@ -47,11 +48,11 @@ dev: packages
 
 # fmt-check: @ Check the format of all source files
 fmt-check: packages
-	${PACKAGER} run fmt:check
+	${PACKAGER} run format:check
 
 # fmt-fix: @ Format all source files
 fmt-fix: packages
-	${PACKAGER} run fmt:fix
+	${PACKAGER} run format:fix
 
 # install: @ Install package manager and all package dependencies
 install:
@@ -68,12 +69,6 @@ else ifeq ($(PACKAGER), pnpm)
 	@if ! [ $$(command -v ${PACKAGER}) ]; then corepack enable ${PACKAGER}; corepack use pnpm@latest-10; corepack ${PACKAGER} --version; fi
 	@if [ -z "$$(${PACKAGER} list astro)" ]; then ${PACKAGER} install; fi
 endif
-
-# lint: @ Check the backend and frontend source code for issues
-lint:
-	${PACKAGER} run lint
-	cargo check
-	cargo clippy
 
 # Sub-task to install dependent packages
 packages: install
