@@ -1,0 +1,27 @@
+# 2026-04-14	mise-en-place configuration
+
+[env]
+NPM = 'pnpm'
+
+[hooks]
+enter = { task = "enter" }
+
+[tasks.enter]
+run = '''
+ls -alt --color
+echo ''
+make
+echo ''
+mise shell-alias
+echo ''
+'''
+
+[shell_alias]
+als = "mise shell-alias"
+bld = "make build"
+check = "make check"
+clean = "make clean"
+deploy = "make deploy"
+dev = "make dev"
+fmtchk = "make format"
+fmtfix = "${NPM} run fmt:fix"
