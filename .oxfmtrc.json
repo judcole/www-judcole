@@ -1,0 +1,30 @@
+{
+    "$schema": "./node_modules/oxfmt/configuration_schema.json",
+    "ignorePatterns": [],
+    "trailingComma": "es5",
+    "semi": false,
+    "printWidth": 120,
+    "experimentalSortImports": {
+        "ignoreCase": true,
+        "newlinesBetween": true,
+        "order": "asc",
+        "groups": [
+            ["builtin", "external"],
+            ["type-builtin", "type-external"],
+            ["internal"],
+            ["type-internal"],
+            ["parent", "sibling", "index"],
+            ["style"]
+        ],
+        "internalPattern": ["@/"]
+    },
+    "overrides": [
+        {
+            "files": ["*.json", "*.md", "*.mdx"],
+            "options": {
+                "printWidth": 100,
+                "tabWidth": 4
+            }
+        }
+    ]
+}

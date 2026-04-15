@@ -1,8 +1,8 @@
 {
     "name": "jc-portfolio",
+    "version": "3.0.0",
     "description": "Jud Cole Personal Portfolio Website",
     "type": "module",
-    "version": "3.0.0",
     "scripts": {
         "astro": "astro",
         "build": "astro build",
