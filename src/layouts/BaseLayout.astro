@@ -1,5 +1,5 @@
 ---
-// 2026-02-21 Jud Cole Portfolio Base Layout
+// 2026-04-16 Jud Cole Portfolio Base Layout
 
 // spell-checker: ignore lofi
 
@@ -29,6 +29,7 @@ const {
 -->
 <html lang="en" data-theme="light">
     <head>
+        <title>{title}</title>
         <BaseHead title={title} description={description} image={image} , ogType={ogType} />
         {TRANSITION_API && <ClientRouter />}
         <ThemeScript />
