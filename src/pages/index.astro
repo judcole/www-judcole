@@ -1,5 +1,5 @@
 ---
-// 05/04/2025     Jud Cole Portfolio Resume page
+// 2026-04-17     Jud Cole Portfolio Resume page
 
 // spell-checker: ignore FOSS judcole NAEP NCES
 
@@ -127,7 +127,7 @@ const last_posts = posts.slice(0, 3);
                     title={post.data.title + " (" + dayjs(post.data.pubDate).format("ll") + ")"}
                     img={post.data.heroImage}
                     desc={post.data.description}
-                    url={"/blog/" + createSlug(post.data.title, post.id)}
+                    url={"/blog/" + createSlug(post.data.title, post.id) + "/"}
                     target="_self"
                     badge={post.data.badge}
                 />
