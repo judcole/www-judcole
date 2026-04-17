@@ -1,8 +1,8 @@
 #!/usr/bin/make -f
 
-# 2026-04-16	Jud Cole Astro portfolio Web site make configuration
+# 2026-04-17	Jud Cole Astro portfolio Web site make configuration
 
-LOCAL_FOLDER := build
+LOCAL_FOLDER := dist
 REMOTE_FOLDER := jc-portfolio
 REMOTE_HOST := fd-debian-scw
 REMOTE_PATH := /data/nginx/www
