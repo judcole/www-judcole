@@ -1,5 +1,5 @@
 /*
-    01/19/25  ESlint configuration
+    2026-04-16  Eslint configuration
 */
 
 import { FlatCompat } from "@eslint/eslintrc"
@@ -29,7 +29,7 @@ export default [
       "**/package-lock.json",
       "**/pnpm-lock.yaml",
       "**/yarn.lock",
-      "build",
+      "dist",
       "package",
     ],
   },

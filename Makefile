@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-# 2026-04-14	Jud Cole Astro portfolio Web site make configuration
+# 2026-04-16	Jud Cole Astro portfolio Web site make configuration
 
 LOCAL_FOLDER := build
 REMOTE_FOLDER := jc-portfolio
@@ -84,8 +84,11 @@ preview: build
 
 # upgrade: @ Upgrade all packages to their latest versions
 upgrade: packages
+ifeq ($(PACKAGER), pnpm)
+	corepack use pnpm@latest
 	${PACKAGER} upgrade --interactive --latest
 	${PACKAGER} dlx @astrojs/upgrade
+endif
 
 # zip: @ Zip up the unique source files
 zip:

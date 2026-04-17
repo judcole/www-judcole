@@ -1,7 +1,8 @@
 # build output
-build/
 .cache
 .idea
+dist/
+
 # dependencies
 node_modules/
 
@@ -21,4 +22,5 @@ pnpm-debug.log*
 # Astro
 .astro/
 
+# Package lock
 pnpm-lock.yaml
