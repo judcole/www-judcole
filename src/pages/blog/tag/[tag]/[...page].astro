@@ -1,37 +1,39 @@
 ---
-// 2026-04-17     Blog items for a specified tags page
+// 2026-04-17 Blog items for a specified tags page
 
-import BaseLayout from "@layouts/BaseLayout.astro";
-import HorizontalCard from "@components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../../../../lib/createSlug";
-import type { GetStaticPathsOptions } from "astro";
+import BaseLayout from "@layouts/BaseLayout.astro"
+import HorizontalCard from "@components/HorizontalCard.astro"
+import { getCollection } from "astro:content"
+import createSlug from "../../../../lib/createSlug"
+import type { GetStaticPathsOptions } from "astro"
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-    const all_posts = await getCollection("blog");
+    const all_posts = await getCollection("blog")
     const all_tags = all_posts.flatMap((post) => {
-        return post.data.tags || [];
-    });
+        return post.data.tags || []
+    })
+    const unique_tags = all_tags.filter((item, index) => all_tags.indexOf(item) === index)
 
-    return all_tags.flatMap((tag) => {
+    return unique_tags.flatMap((tag) => {
         const filtered_posts = all_posts.filter((post) => {
-            return post.data.tags?.includes(tag);
-        });
+            return post.data.tags?.includes(tag)
+        })
         return paginate(filtered_posts, {
             params: { tag },
             pageSize: 10,
-        });
-    });
+        })
+    })
 }
 
-const { page } = Astro.props;
-const params = Astro.params;
+const { page } = Astro.props
+const params = Astro.params
 ---
 
 <BaseLayout title={"Blog - " + params.tag} sideBarActiveItemID="blog">
     <div class="mb-5">
         <div class="w-full text-3xl font-bold">Blog - {params.tag}</div>
     </div>
+
     {
         page.data.length === 0 ? (
             <div class="border-secondary bg-base-200 w-full min-w-full border-l-4 p-4">
