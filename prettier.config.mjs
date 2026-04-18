@@ -1,7 +1,10 @@
 /*
-    07/05/24  Prettier configuration
+    2026-04-17 Prettier configuration
 */
-module.exports = {
+
+/** @type {import("prettier").Config} */
+
+export default {
   arrowParens: "always",
   jsxSingleQuote: false,
   overrides: [
@@ -14,7 +17,7 @@ module.exports = {
   ],
   plugins: ["prettier-plugin-astro", "prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
   printWidth: 110,
-  semi: true,
+  semi: false,
   singleQuote: false,
   tabWidth: 4,
   trailingComma: "all",
