@@ -6,7 +6,7 @@
     "scripts": {
         "astro": "astro",
         "build": "astro build",
-        "check": "astro check && tsc --project tsconfig.json --noEmit",
+        "check": "eslint . && astro check && tsc --project tsconfig.json --noEmit",
         "clean": "rm -rf ./.astro && rm -rf dist/* && rm -rf node_modules && rm -rf pnpm-lock.yaml && rm -f *.lock && rm -f *.log",
         "dev": "astro dev",
         "format:check": "oxfmt --check . && prettier --check '**/*.astro'",

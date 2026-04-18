@@ -1,5 +1,5 @@
 /*
-    2026-04-16  Eslint configuration
+    2026-04-17 Eslint configuration
 */
 
 import { FlatCompat } from "@eslint/eslintrc"
@@ -18,35 +18,22 @@ const compat = new FlatCompat({
 })
 
 export default [
+  // ...astro.configs["recommended"],
   {
-    ignores: [
-      "!**/.env.example",
-      ".astro",
-      "**/.DS_Store",
-      "**/.env.*",
-      "**/.env",
-      "**/node_modules",
-      "**/package-lock.json",
-      "**/pnpm-lock.yaml",
-      "**/yarn.lock",
-      "dist",
-      "package",
-    ],
+    ignores: ["dist"],
   },
   ...compat.extends("eslint:recommended", "eslint-config-prettier"),
   {
-    plugins: {
-      astro,
-    },
-
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.node,
       },
-
       ecmaVersion: 2020,
       sourceType: "module",
+    },
+    plugins: {
+      astro,
     },
   },
 ]
