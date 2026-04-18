@@ -1,6 +1,6 @@
 ---
-const { sideBarActiveItemID } = Astro.props;
-const activeItemClass = "bg-base-200"; // For primary color replace value with `active` class
+const { sideBarActiveItemID } = Astro.props
+const activeItemClass = "bg-base-200" // For primary color replace value with `active` class
 ---
 
 <ul class="menu menu-md w-full shrink grow overflow-y-auto">
@@ -15,15 +15,15 @@ const activeItemClass = "bg-base-200"; // For primary color replace value with `
     <li>
         <a id="email-resume" class="py-3 text-xl" href="" target="_blank"
             >Email for a resume
-            <img src="/pdf.svg" onload="fff()" width="32" height="32"  alt="Email PDF"/></a
+            <img src="/pdf.svg" onload="fff()" width="32" height="32" alt="Email PDF" /></a
         >
     </li>
 </ul>
 
 <script is:inline>
     function fff() {
-        const hRef = document.getElementById("email-resume");
-        hRef.href = "mail" + "to:res" + "ume" + String.fromCharCode(64) + "jud" + "cole.com";
+        const hRef = document.getElementById("email-resume")
+        hRef.href = "mail" + "to:res" + "ume" + String.fromCharCode(64) + "jud" + "cole.com"
     }
 </script>
 
@@ -34,6 +34,8 @@ const activeItemClass = "bg-base-200"; // For primary color replace value with `
         activeClass: activeItemClass,
     }}
 >
-    const activeItemElem = document.getElementById(sideBarActiveItemID);
-    if (activeItemElem) { activeItemElem.classList.add(activeItemClass) }
+    const activeItemElem = document.getElementById(sideBarActiveItemID)
+    if (activeItemElem) {
+        activeItemElem.classList.add(activeItemClass)
+    }
 </script>

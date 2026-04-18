@@ -1,9 +1,9 @@
 ---
 // 2026-04-17     Horizontal card component
 
-const { title, img, imgWidth = 750, desc, url, badge, tags, target = "_blank" } = Astro.props;
-import { Image } from "astro:assets";
-const tag_url = url.split("/").slice(0, 2).join("/") + "/tag";
+const { title, img, imgWidth = 750, desc, url, badge, tags, target = "_blank" } = Astro.props
+import { Image } from "astro:assets"
+const tag_url = url.split("/").slice(0, 2).join("/") + "/tag"
 ---
 
 <div class="bg-base-100 rounded-lg transition ease-in-out hover:scale-[102%] hover:shadow-xl">

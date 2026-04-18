@@ -1,29 +1,29 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import HorizontalShopItem from "../../components/HorizontalShopItem.astro";
-import { getCollection } from "astro:content";
-import type { GetStaticPathsOptions } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import HorizontalShopItem from "../../components/HorizontalShopItem.astro"
+import { getCollection } from "astro:content"
+import type { GetStaticPathsOptions } from "astro"
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-    const items = await getCollection("store");
-    items.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf());
-    return paginate(items, { pageSize: 10 });
+    const items = await getCollection("store")
+    items.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf())
+    return paginate(items, { pageSize: 10 })
 }
 
 interface Props {
     page: {
         data: {
-            length: number;
-            map: (params: (post: any) => any) => string;
-        };
+            length: number
+            map: (params: (post: any) => any) => string
+        }
         url: {
-            next: string;
-            prev: string;
-        };
-    };
+            next: string
+            prev: string
+        }
+    }
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props
 ---
 
 <BaseLayout title="Store" sideBarActiveItemID="store">

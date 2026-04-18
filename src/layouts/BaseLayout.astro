@@ -3,14 +3,14 @@
 
 // spell-checker: ignore lofi
 
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import SideBar from "../components/SideBar.astro";
-import { ClientRouter } from "astro:transitions";
-import { ThemeScript } from "astro-theme-toggle/components";
+import BaseHead from "../components/BaseHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import SideBar from "../components/SideBar.astro"
+import { ClientRouter } from "astro:transitions"
+import { ThemeScript } from "astro-theme-toggle/components"
 
-import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
+import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config"
 
 const {
     image,
@@ -19,7 +19,7 @@ const {
     includeSidebar = true,
     sideBarActiveItemID,
     ogType,
-} = Astro.props;
+} = Astro.props
 ---
 
 <!doctype html>
