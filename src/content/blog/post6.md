@@ -7,6 +7,6 @@ badge: "New"
 tags: ["product development", "testing"]
 ---
 
-Essential reading for any product team - [Jason Cohen](https://www.linkedin.com/in/jasoncohen/) (yet again) clearly explains a(nother) common mistake / misinterpretation in product development / testing and shows how to address it.
+Essential reading for any product team: [Jason Cohen](https://www.linkedin.com/in/jasoncohen/) (yet again) clearly explains a(nother) common mistake / misinterpretation in product development / testing and shows how to address it.
 
 [p-Hacking your A/B tests: Half of your "successful" A/B tests are false-positives. This is why, and how to fix it.](https://longform.asmartbear.com/p-hacking/)

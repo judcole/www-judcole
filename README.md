@@ -42,7 +42,7 @@ Run the following command in your terminal
 pnpm install
 ```
 
-Once the packages are installed you are ready to run astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server so that you can see your new website in action for the very first time.
+Once the packages are installed, you are ready to run astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server so that you can see your new website in action for the very first time.
 
 ```bash
 pnpm run dev
@@ -103,18 +103,18 @@ pnpm run dev
 
 ### Site config
 
-You can change global site configuration on '/src/config.ts' file:
+You can change the global site configuration in the '/src/config.ts' file:
 
 - **SITE_TITLE**: Default pages title.
 - **SITE_DESCRIPTION**: Default pages title.
-- **GENERATE_SLUG_FROM_TITLE**: By default Astrofy will generate the blog slug pages base on the article name. Set this var to false if you want to use the Astro file base (Compatible with Astrofy older versions).
+- **GENERATE_SLUG_FROM_TITLE**: By default, Astrofy will generate the blog slug pages based on the article name. Set this var to false if you want to use the Astro file base (Compatible with Astrofy older versions).
 - **TRANSITION_API**: Enable and disable transition API
 
-### Components usage
+### Component usage
 
 #### Layout Components
 
-The `BaseHead`, `Footer`, `Header`, and `SideBar` components are already included in the layout system. To change the website content you can edit the content of these components.
+The `BaseHead`, `Footer`, `Header`, and `SideBar` components are already included in the layout system. To change the website content, you can edit the content of these components.
 
 ##### SideBar
 
@@ -124,13 +124,13 @@ You can change your avatar shape using [mask classes](https://daisyui.com/compon
 
 The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack. You can replace the icons in the `SideBarFooter` component
 
-To add a new page in the sidebar go to the `SideBarMenu` component.
+To add a new page in the sidebar, go to the `SideBarMenu` component.
 
 ```html
 <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
 ```
 
-**Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` component of your new page and add that id to the link in the `SideBarMenu`
+**Note**: To change the sidebar menu's active item, you need to set up the prop `sideBarActiveItemID` in the `BaseLayout` component of your new page and add that id to the link in the `SideBarMenu`
 
 #### TimeLine
 
@@ -159,7 +159,7 @@ tags={['Array','of','tags']} />
 
 #### HorizontalCard Shop Item
 
-This component is already included in the Store layout of the template. In case you want to use it in another place these are the props.
+This component is already included in the Store layout of the template. In case you want to use it in another place, these are the props.
 
 ```html
 <HorizontalShopItem
@@ -179,9 +179,9 @@ This component is already included in the Store layout of the template. In case 
 
 #### Adding a Custom Component
 
-To add a custom component, you can create a .astro file in the components folder under the source folder.
+To add a custom component, you can create an .astro file in the components folder under the source folder.
 
-Components must follow this template. The `---` represents the code fence and uses Javascript and can be used for imports.
+Components must follow this template. The `---` represents the code fence and uses JavaScript and can be used for imports.
 
 The HTML component is the actual style of your new component.
 
@@ -203,7 +203,7 @@ The BaseLayout defines a general template for each new webpage you want to add. 
 
 ### Content
 
-You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
+You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in the `/content/` folder, and you will need to add it to config.ts.
 
 #### config.ts
 
@@ -215,7 +215,7 @@ Add your `md` blog post in the `/content/blog/` folder.
 
 ##### Post format
 
-Add code with this format in the top of each post file.
+Add code with this format at the top of the file for each post.
 
 ```md
 ---
@@ -234,11 +234,11 @@ Blog uses Astro's content collection to query post's `md`.
 
 ##### Blog [page].astro
 
-The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
+The `[page].astro` is the route to work with the paginated list of posts. You can change there the number of items listed for each page and the pagination button labels.
 
 ##### [slug].astro
 
-The `[slug].astro` is the base route for every blog post, you can customize the page layout or behavior, by default uses `content/blog` for content collection and `PostLayout` as layout.
+The `[slug].astro` is the base route for every blog post, you can customize the default page layout or behavior using `content/blog` for the content collection and `PostLayout` as the layout.
 
 #### Shop
 
@@ -276,7 +276,7 @@ Feel free to modify the content included in the pages that the template contains
 
 ### Theming
 
-To change the template theme change the `data-theme` attribute of the `<html>` tag in `BaseLayout.astro` file.
+To change the template theme, change the `data-theme` attribute of the `<html>` tag in `BaseLayout.astro` file.
 
 You can choose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
 
@@ -291,7 +291,7 @@ You can deploy your site on your favorite static hosting service such as Vercel,
 The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy your website.
 
 > **⚠️ CAUTION** </br>
-> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
+> The Blog pagination of this template is implemented using dynamic route parameters in its filename, and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
 
 ## Contributing
 

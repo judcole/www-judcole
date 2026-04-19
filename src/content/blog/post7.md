@@ -6,6 +6,6 @@ heroImage: "/post_img.webp"
 tags: ["architecture", "devops"]
 ---
 
-A newly updated 'classic' and 'must-read' book for all DevOps and Platform Engineers - congrats and nice one Kief Morris.
+A newly updated 'classic' and 'must-read' book for all DevOps and Platform Engineers. Congrats and great job Kief Morris.
 
 [Infrastructure as Code, third edition](https://infrastructure-as-code.com/book/)
