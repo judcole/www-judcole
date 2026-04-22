@@ -1,58 +1,34 @@
 ---
-date: 2026-01-16
-title: Astrofy | Personal Portfolio Website Template
+date: 2026-04-21
+title: Personal Portfolio Website Template
 author: Jud Cole
 description: Personal Portfolio Website built with Astro and TailwindCSS based on the Astrofy template.
 spell-checker: ignore Astrofy puppeteerrc
 ---
 
-## JC Commands
+## Set up Commands
 
 ```sh
-# Install Puppeteer
-pnpm add puppeteer
+# Install Chrome for Puppeteer
 pnpm dlx puppeteer browsers install chrome[@version]
-# Upgrade Astro
-pnpm dlx @astrojs/upgrade
-# Configure Puppeteer in .puppeteerrc.cjs
-/**
- * @type {import("puppeteer").Configuration}
- */
-module.exports = {
-  // Download Chrome (default `skipDownload: false`).
-  chrome: {
-    skipDownload: false,
-  },
-  // Download Firefox (default `skipDownload: true`).
-  firefox: {
-    skipDownload: true,
-  },
-};
-```
-
-## Demo
-
-View a live demo of [Astrofy](https://astrofy-template.netlify.app/)
-
-## Installation
-
-Run the following command in your terminal
-
-```bash
+# Install all node packages
 pnpm install
 ```
 
-Once the packages are installed, you are ready to run astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server so that you can see your new website in action for the very first time.
+## Usage
 
-```bash
-pnpm run dev
+See the `Makefile` for all available commands.
+
+```sh
+# Show available make commands
+make
 ```
 
 ## Tech Stack
 
 - [Astro](https://astro.build)
-- [tailwindcss](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
+- [tailwindcss](https://tailwindcss.com/)
 
 ## Project Structure
 
