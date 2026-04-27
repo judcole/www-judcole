@@ -14,16 +14,17 @@
         "lint": "oxlint --type-aware",
         "lint:fix": "oxlint --type-aware --fix",
         "preview": "astro preview",
+        "scan": "cve-lite --all --verbose .",
         "start": "astro dev",
         "update": "pnpm update --latest",
         "upgrade": "pnpm dlx @astrojs/upgrade"
     },
     "dependencies": {
-        "@astrojs/mdx": "^5.0.3",
+        "@astrojs/mdx": "^5.0.4",
         "@astrojs/rss": "^4.0.18",
         "@astrojs/sitemap": "3.7.2",
         "@tailwindcss/vite": "^4.2.4",
-        "astro": "^6.1.8",
+        "astro": "^6.1.9",
         "astro-theme-toggle": "^0.8.0",
         "daisyui": "^5.5.19",
         "dayjs": "^1.11.20",
@@ -39,20 +40,20 @@
         "@eslint/eslintrc": "^3.3.5",
         "@eslint/js": "^10.0.1",
         "@tailwindcss/typography": "^0.5.19",
-        "@typescript-eslint/parser": "^8.59.0",
+        "@typescript-eslint/parser": "^8.59.1",
         "checkcss": "^2.0.9",
         "eslint": "^10.2.1",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-astro": "^1.7.0",
         "eslint-plugin-jsx-a11y": "^6.10.2",
         "oxfmt": "^0.46.0",
-        "oxlint": "^1.61.0",
+        "oxlint": "^1.62.0",
         "oxlint-tsgolint": "^0.21.1",
         "prettier": "^3.8.3",
         "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-organize-imports": "^4.3.0",
-        "prettier-plugin-tailwindcss": "^0.7.2",
-        "typescript-eslint": "^8.59.0"
+        "prettier-plugin-tailwindcss": "^0.7.4",
+        "typescript-eslint": "^8.59.1"
     },
     "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
     "pnpm": {
@@ -61,6 +62,9 @@
             "esbuild",
             "puppeteer",
             "sharp"
-        ]
+        ],
+        "overrides": {
+            "yaml": "^2.8.3"
+        }
     }
 }

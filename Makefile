@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-# 2026-04-17	Jud Cole Astro portfolio Web site make configuration
+# 2026-04-27	Jud Cole Astro portfolio Web site make configuration
 
 LOCAL_FOLDER := dist
 REMOTE_FOLDER := jc-portfolio
@@ -81,6 +81,10 @@ endif
 # preview: @ Build and preview the Web site on localhost
 preview: build
 	${PACKAGER} run preview
+
+# scan: @ Scan all dependencies for issues
+scan:
+	${PACKAGER} run scan
 
 # upgrade: @ Upgrade all packages to their latest versions
 upgrade: packages
