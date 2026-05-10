@@ -1,4 +1,4 @@
-# 2026-04-14	mise-en-place configuration
+# 2026-05-10	mise-en-place configuration
 
 [env]
 NPM = 'pnpm'
@@ -25,3 +25,5 @@ deploy = "make deploy"
 dev = "make dev"
 fmtchk = "make fmt-check"
 fmtfix = "make fmt-fix"
+update = "${NPM} run update"
+upgrade = "${NPM} run upgrade"
