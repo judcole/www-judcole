@@ -22,5 +22,6 @@ pnpm-debug.log*
 # Astro
 .astro/
 
-# Package lock
+# pnpm packager files
 pnpm-lock.yaml
+pnpm-workspace.yaml
