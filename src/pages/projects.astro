@@ -1,5 +1,5 @@
 ---
-// 10/14/25     Jud Cole Portfolio Resume page
+// 2026-05-10     Jud Cole Portfolio Resume page
 
 // spell-checker: ignore: tauri
 
@@ -9,14 +9,14 @@ import HorizontalCard from "../components/HorizontalCard.astro"
 
 <BaseLayout title="Projects" sideBarActiveItemID="projects">
     <div>
-        <div class="mb-5 w-full text-3xl font-bold">Coming soon . . .</div>
+        <div class="mb-5 w-full text-3xl font-bold">WIP coming soon . . .</div>
     </div>
 
     <HorizontalCard
         title="Tauri Application templates"
         img="/project.svg"
         imgWidth="50"
-        desc="A set of template applications to build native desktop CLI, GUI, and service applications with Rust and the Tauri framework."
+        desc="Cookie-Cutter templates with many pre-configured plugins to build native desktop CLI, GUI, and service applications with Rust and the Tauri framework."
         url="https://github.com/judcole"
     />
     <div class="divider my-0"></div>
@@ -42,6 +42,14 @@ import HorizontalCard from "../components/HorizontalCard.astro"
     />
     <div class="divider my-0"></div>
     <HorizontalCard
+        title="Sublime Text Editor Link Follower Plugin"
+        img="/project.svg"
+        imgWidth="50"
+        desc="A plugin for the Sublime Text Editor to follow file links and Web URLs."
+        url="https://github.com/judcole/st-link-follower"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
         title="Twitter API Coding challenge"
         img="/project.svg"
         imgWidth="50"
@@ -63,10 +71,26 @@ import HorizontalCard from "../components/HorizontalCard.astro"
     </div>
 
     <HorizontalCard
+        title="Incus VM build templates"
+        img="/project.svg"
+        imgWidth="50"
+        desc="Ansible, Bash, Incus, and Packer scripts to build Fedora and Arch Linux VMs for a basic workstation and a full development environment."
+        url="https://github.com/judcole"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+        title="VMware VM build templates"
+        img="/project.svg"
+        imgWidth="50"
+        desc="Ansible, Bash, and Packer scripts to build Fedora, macOS, and Windows VMs for a basic workstation and a full development environment."
+        url="https://github.com/judcole"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
         title="Web Site Infrastructure"
         img="/project.svg"
         imgWidth="50"
-        desc="My personal portfolio site and several other sites are built, hosted, and managed by me on Scaleway Debian hosts running Nomad and Podman for container orchestration, NGINX and Fabio for scaling and load balancing, and Gatus and Bezel for monitoring and alerting. All infrastructure is configured and managed using Terraform and Ansible."
+        desc="My personal portfolio site and several other public sites are built, hosted, and managed on Scaleway Debian hosts running Nomad and Podman for container orchestration, NGINX and Fabio for scaling and load balancing, and Gatus and Bezel for monitoring and alerting. All infrastructure is configured and managed using Terraform and Ansible."
         url="https://github.com/judcole"
     />
     <div class="divider my-0"></div>
