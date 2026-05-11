@@ -6,7 +6,7 @@ heroImage: "/post_img.webp"
 tags: ["ai", "mozilla", "security"]
 ---
 
-A clear sign of the way things are going, and in defensive security it is a great direction and clearly for the best. 
+A clear sign of the way things are going, and in defensive security it is a great direction and clearly for the best.
 
 I also appreciate the way that Mozilla are responsibly sharing their imperfections, processes, and the impressive results.
 
