@@ -18,6 +18,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
         const filtered_posts = all_posts.filter((post) => {
             return post.data.tags?.includes(tag)
         })
+        filtered_posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
         return paginate(filtered_posts, {
             params: { tag },
             pageSize: 10,
