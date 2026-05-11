@@ -1,5 +1,5 @@
 /*
-    2026-04-17 Prettier configuration
+    2026-05-20  Prettier configuration
 */
 
 /** @type {import("prettier").Config} */
@@ -15,7 +15,12 @@ export default {
       },
     },
   ],
-  plugins: ["prettier-plugin-astro", "prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
+  plugins: [
+    "prettier-plugin-astro",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-astro-organize-imports",
+  ],
   printWidth: 110,
   semi: false,
   singleQuote: false,

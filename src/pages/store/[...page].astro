@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro"
-import HorizontalShopItem from "../../components/HorizontalShopItem.astro"
-import { getCollection } from "astro:content"
 import type { GetStaticPathsOptions } from "astro"
+import { getCollection } from "astro:content"
+import HorizontalShopItem from "../../components/HorizontalShopItem.astro"
+import BaseLayout from "../../layouts/BaseLayout.astro"
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     const items = await getCollection("store")
