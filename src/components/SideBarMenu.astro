@@ -3,7 +3,12 @@ const { sideBarActiveItemID } = Astro.props
 const activeItemClass = "bg-base-200" // For primary color replace value with `active` class
 ---
 
-<ul class="menu menu-md w-full shrink grow overflow-y-auto">
+<ul
+    id="sidebar-menu"
+    class="menu menu-md w-full shrink grow overflow-y-auto"
+    data-active-item-id={sideBarActiveItemID}
+    data-active-item-class={activeItemClass}
+>
     <li><a class="py-3 text-xl" id="home" href="/">Home</a></li>
     <li><a class="py-3 text-xl" id="resume" href="/resume/">Resume</a></li>
     <li><a class="py-3 text-xl" id="recommendations" href="/recommendations/">Recommendations</a></li>
@@ -23,19 +28,21 @@ const activeItemClass = "bg-base-200" // For primary color replace value with `a
 <script is:inline>
     function fff() {
         const hRef = document.getElementById("email-resume")
-        hRef.href = "mail" + "to:res" + "ume" + String.fromCharCode(64) + "jud" + "cole.com"
+        if (hRef instanceof HTMLAnchorElement) {
+            hRef.href = "mail" + "to:res" + "ume" + String.fromCharCode(64) + "jud" + "cole.com"
+        }
     }
 </script>
 
-<script
-    is:inline
-    define:vars={{
-        sideBarActiveItemID: sideBarActiveItemID,
-        activeItemClass: activeItemClass,
-    }}
->
-    const activeItemElem = document.getElementById(sideBarActiveItemID)
-    if (activeItemElem) {
-        activeItemElem.classList.add(activeItemClass)
+<script is:inline>
+    // The active item id and class are passed through data attributes so this
+    // stays plain checkable JS (define:vars globals defeat the type checker)
+    const menu = document.getElementById("sidebar-menu")
+    if (menu instanceof HTMLElement) {
+        const { activeItemId, activeItemClass } = menu.dataset
+        const activeItemElem = activeItemId ? document.getElementById(activeItemId) : null
+        if (activeItemElem && activeItemClass) {
+            activeItemElem.classList.add(activeItemClass)
+        }
     }
 </script>

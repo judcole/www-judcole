@@ -10,6 +10,13 @@
 
 @config "../../tailwind.config.mjs";
 
+/* Pin the site's base font stack so Tailwind default changes (as in the
+   4.3.0 -> 4.3.3 upgrade) cannot silently alter the rendered typeface */
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .time-line-container > div:last-child .education__time > .education__line {
   display: none;
 }

@@ -6,7 +6,7 @@
     "scripts": {
         "astro": "astro",
         "build": "astro build",
-        "check": "eslint . && astro check && tsc --project tsconfig.json --noEmit",
+        "check": "eslint . && astro check && tsc --project tsconfig.tsc.json --noEmit",
         "clean": "rm -rf ./.astro && rm -rf dist/* && rm -rf node_modules && rm -rf pnpm-lock.yaml && rm -f *.lock && rm -f *.log",
         "dev": "astro dev",
         "format:check": "oxfmt --check . && prettier --check '**/*.astro'",
@@ -32,7 +32,7 @@
         "puppeteer": "^25.3.0",
         "sharp": "^0.35.3",
         "tailwindcss": "^4.3.3",
-        "typescript": "^7.0.2"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "devDependencies": {
         "@astrojs/check": "^0.9.9",
@@ -41,6 +41,7 @@
         "@eslint/js": "^10.0.1",
         "@tailwindcss/typography": "^0.5.20",
         "@typescript-eslint/parser": "^8.65.0",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "checkcss": "^2.0.9",
         "eslint": "^10.7.0",
         "eslint-config-prettier": "^10.1.8",

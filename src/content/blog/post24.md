@@ -1,8 +1,8 @@
 ---
 title: "Debian are now enforcing reproducibility on all packages"
 description: "Aided by the efforts of the Reproducible Builds project, we've decided it's
-time to say that Debian must ship reproducible packages"
-pubDate: "May 10 2026"
+time to say that Debian must ship reproducible packages."
+pubDate: "May 30 2026"
 heroImage: "/post_img.webp"
 tags: ["debian", "reproducible builds", "software"]
 ---

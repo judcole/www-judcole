@@ -1,6 +1,4 @@
 ---
-import dayjs from "dayjs"
-import localizedFormat from "dayjs/plugin/localizedFormat"
 import { type StoreSchema } from "../content.config"
 import BaseLayout from "./BaseLayout.astro"
 
@@ -19,8 +17,6 @@ const {
     custom_link_label,
 } = Astro.props
 
-dayjs.extend(localizedFormat)
-// const displayDate = dayjs(updatedDate).format("ll");
 import { Image } from "astro:assets"
 ---
 

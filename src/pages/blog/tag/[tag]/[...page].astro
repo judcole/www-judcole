@@ -1,13 +1,12 @@
 ---
-// 2026-05-10 Blog items for a specified tags page
+// 2026-07-29 Blog items for a specified tags page
 
 import HorizontalCard from "@components/HorizontalCard.astro"
 import BaseLayout from "@layouts/BaseLayout.astro"
 import type { GetStaticPathsOptions } from "astro"
 import { getCollection } from "astro:content"
-import dayjs from "dayjs"
-import localizedFormat from "dayjs/plugin/localizedFormat"
 import createSlug from "../../../../lib/createSlug"
+import formatDate from "../../../../lib/formatDate"
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     const all_posts = await getCollection("blog")
@@ -27,9 +26,6 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
         })
     })
 }
-
-dayjs.extend(localizedFormat)
-const displayDate = (pubDate: Date): string => dayjs(pubDate).format("ll")
 
 const { page } = Astro.props
 const params = Astro.params
@@ -51,7 +47,7 @@ const params = Astro.params
                 {page.data.map((post: any) => (
                     <>
                         <HorizontalCard
-                            title={displayDate(post.data.pubDate) + ": " + post.data.title}
+                            title={formatDate(post.data.pubDate) + ": " + post.data.title}
                             img="/blog.svg"
                             imgWidth="50"
                             desc={post.data.description}

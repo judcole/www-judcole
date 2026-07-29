@@ -1,8 +1,9 @@
 /*
-    2026-04-21 Tailwind configuration
+    2026-07-29 Tailwind configuration
 */
 
-/** @type {import('tailwindcss').Config} */
+/** daisyui is a plugin-added key that tailwind's own Config type does not know
+ * @type {import('tailwindcss').Config & { daisyui?: Record<string, unknown> }} */
 
 export default {
   daisyui: {

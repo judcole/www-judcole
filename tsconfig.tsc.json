@@ -1,0 +1,11 @@
+/*
+    2026-07-29 TypeScript configuration for the plain `tsc` check step
+*/
+
+{
+    "extends": "./tsconfig.json",
+    // astro.config.mjs stays in the main project so `astro check` gets
+    // Starlight's ambient types, but is excluded here so tsc does not
+    // type-check third-party plugins' raw .ts sources
+    "exclude": ["dist", "astro.config.mjs"]
+}

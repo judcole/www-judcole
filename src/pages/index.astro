@@ -1,5 +1,5 @@
 ---
-// 2026-04-17     Jud Cole Portfolio Resume page
+// 2026-07-29     Jud Cole Portfolio Resume page
 
 // spell-checker: ignore FOSS judcole NAEP NCES
 
@@ -9,7 +9,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 import HorizontalCard from "../components/HorizontalCard.astro"
 import { getCollection } from "astro:content"
 import createSlug from "../lib/createSlug"
-import dayjs from "dayjs"
+import formatDate from "../lib/formatDate"
 
 const posts = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -81,29 +81,29 @@ const last_posts = posts.slice(0, 3)
             </p>
             <ul class="mx-6 mt-4 mb-4 grid list-disc gap-2">
                 <li>
-                    <span class="font-bold">
+                    <span class="font-bold pr-1">
                         Transformation of business challenges into reliable and scalable solutions:
                     </span>
                     Innovative creator of technology- based strategies and solutions that provide optimal value
                     for an organization and its customers.
                 </li>
                 <li>
-                    <span class="font-bold"> Visionary and inspirational IT leadership:</span>
+                    <span class="font-bold pr-1">Visionary and inspirational IT leadership:</span>
                     Enthusiastic driver of organizational, team and personal evolution through team building, empowerment,
                     and mentoring to create a culture of success and achievement.
                 </li>
                 <li>
-                    <span class="font-bold"> Exceptional results exceeding expectations: </span>
+                    <span class="font-bold pr-1">Exceptional results exceeding expectations:</span>
                     Committed goal- and result-oriented pioneer of cutting-edge techniques and technologies to enhance
                     operational efficiency, reliability and profitability while reducing associated risk.
                 </li>
                 <li>
-                    <span class="font-bold"> Clear communication:</span> Skilled speaker and writer with international
-                    and multi-cultural experience in business development, proposal writing, product briefing, public
-                    speaking, training, and authoring technical manuals.
+                    <span class="font-bold pr-1">Clear communication:</span>
+                    Skilled speaker and writer with international and multi-cultural experience in business development,
+                    proposal writing, product briefing, public speaking, training, and authoring technical manuals.
                 </li>
                 <li>
-                    <span class="font-bold"> Far reaching technical expertise:</span>
+                    <span class="font-bold pr-1">Far reaching technical expertise:</span>
                     Knowledgeable problem solver and builder of technical solutions for Cloud (AWS, Azure, GCP),
                     Mobile (Android, iOS), Web, Desktop (Windows, Linux, macOS), and Virtual (Docker, VMware, VirtualBox,
                     Xen) platforms and environments.
@@ -124,7 +124,7 @@ const last_posts = posts.slice(0, 3)
         last_posts.map((post) => (
             <>
                 <HorizontalCard
-                    title={post.data.title + " (" + dayjs(post.data.pubDate).format("ll") + ")"}
+                    title={post.data.title + " (" + formatDate(post.data.pubDate) + ")"}
                     img="/blog.svg"
                     imgWidth="50"
                     desc={post.data.description}

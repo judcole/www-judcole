@@ -1,7 +1,7 @@
 ---
 title: "How Anthropic’s Mythos has rewritten Firefox’s approach to cybersecurity"
-description: "Mozilla are responsibly sharing their imperfections, processes, and the impressive results"
-pubDate: "May 10 2026"
+description: "Mozilla are responsibly sharing their imperfections, processes, and the impressive results."
+pubDate: "May 16 2026"
 heroImage: "/post_img.webp"
 tags: ["ai", "mozilla", "security"]
 ---

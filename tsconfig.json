@@ -1,10 +1,11 @@
 /*
-    2026-04-19 TypeScript configuration
+    2026-07-29 TypeScript configuration
 */
 
 {
     "extends": "astro/tsconfigs/base",
     "compilerOptions": {
+        "checkJs": true,
         "paths": {
             "@components/*": ["./src/components/*"],
             "@layouts/*": ["./src/layouts/*"]
@@ -14,6 +15,9 @@
                 "name": "@astrojs/ts-plugin"
             }
         ],
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "sourceMap": true,
         "strictNullChecks": true,
         "verbatimModuleSyntax": true
     }
