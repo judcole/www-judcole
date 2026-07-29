@@ -1,0 +1,10 @@
+# 2026-07-29  pnpm settings
+
+allowBuilds:
+  esbuild: true
+  puppeteer: true
+  sharp: true
+
+# Supply-chain protection: install and update only resolve package versions
+# published at least this many minutes ago (10080 = 7 days)
+minimumReleaseAge: 10080
