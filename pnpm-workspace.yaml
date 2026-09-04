@@ -1,6 +1,7 @@
 # 2026-07-29  pnpm settings
 
 allowBuilds:
+  better-sqlite3: true
   esbuild: true
   puppeteer: true
   sharp: true
