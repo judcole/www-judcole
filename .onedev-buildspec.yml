@@ -1,0 +1,36 @@
+# 2026-09-04 OneDev Build workflow to check, scan, and build the website
+version: 53
+jobs:
+  - name: Check, scan, and build the Jud Cole portfolio website
+    jobExecutor: docker
+    steps:
+      - type: CheckoutStep
+        name: Check out the code
+        cloneCredential:
+          type: DefaultCredential
+        withLfs: false
+        withSubmodules: false
+        condition: SUCCESSFUL
+        optional: false
+      - type: CommandStep
+        name: Check, scan, and build the website
+        runInContainer: true
+        image: node:latest
+        interpreter:
+          type: PosixInterpreter
+          shell: bash
+          commands: |
+            make install
+            make check
+            make scan
+            make build
+        runAs: 0:0
+        useTTY: true
+        condition: SUCCESSFUL
+        optional: false
+    retryCondition: never
+    maxRetries: 3
+    retryDelay: 30
+    includeUpstreamWhenRebuild: false
+    includeDownstreamWhenRebuild: false
+    timeout: 14400
