@@ -68,9 +68,7 @@ else ifeq ($(PACKAGER), pnpm)
 	@if ! [ $$(command -v ${PACKAGER}) ]; then corepack enable ${PACKAGER}; corepack use pnpm@latest; corepack ${PACKAGER} --version; fi
 endif
 	COREPACK_ENABLE_DOWNLOAD_PROMPT=0 ${PACKAGER} --version
-	${PACKAGER} setup
 	if [ -z "$$(${PACKAGER} list astro)" ]; then ${PACKAGER} install; fi
-	${PACKAGER} approve-builds --all
 
 # Sub-task to install dependent packages
 packages:
