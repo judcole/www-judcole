@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-# 2026-04-27	Jud Cole Astro portfolio Web site make configuration
+# 2026-09-04	Jud Cole Astro portfolio Web site make configuration
 
 LOCAL_FOLDER := dist
 REMOTE_FOLDER := jc-portfolio
@@ -63,15 +63,17 @@ ifneq ($(NVM_INSTALLED),0)
 endif
 	@if ! [ $$(command -v corepack) ]; then npm install --global corepack@latest; corepack --version; fi
 ifeq ($(PACKAGER), yarn)
-	@if ! [ $$(command -v ${PACKAGER}) ]; then corepack enable ${PACKAGER}; corepack use pnpm@latest-10; corepack ${PACKAGER} --version; fi
-	@if [ -z "$$(${PACKAGER} list astro)" ]; then ${PACKAGER} install; fi
+	@if ! [ $$(command -v ${PACKAGER}) ]; then corepack enable ${PACKAGER}; corepack use pnpm@latest; corepack ${PACKAGER} --version; fi
 else ifeq ($(PACKAGER), pnpm)
-	@if ! [ $$(command -v ${PACKAGER}) ]; then corepack enable ${PACKAGER}; corepack use pnpm@latest-10; corepack ${PACKAGER} --version; fi
-	@if [ -z "$$(${PACKAGER} list astro)" ]; then ${PACKAGER} install; fi
+	@if ! [ $$(command -v ${PACKAGER}) ]; then corepack enable ${PACKAGER}; corepack use pnpm@latest; corepack ${PACKAGER} --version; fi
 endif
+	COREPACK_ENABLE_DOWNLOAD_PROMPT=0 ${PACKAGER} --version
+	${PACKAGER} setup
+	if [ -z "$$(${PACKAGER} list astro)" ]; then ${PACKAGER} install; fi
+	${PACKAGER} approve-builds --all
 
 # Sub-task to install dependent packages
-packages: install
+packages:
 ifeq ($(PACKAGER), yarn)
 	@if ! [ -f "yarn.lock" ]; then yarn install; fi
 else ifeq ($(PACKAGER), pnpm)
